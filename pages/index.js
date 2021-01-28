@@ -26,14 +26,14 @@ export const QuizContainer = styled.div `
 export default function Home() {
   return (
 
-    <QuizBackground backgroundImage={db.bg} >
+    <QuizBackground>
       <QuizContainer>
         <Widget>
           <Widget.Header>
-            <h1>Teste de CSS</h1>
+            <h1>Teste de ???</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Tens o que é nescessário?</p>
+            <p>Ainda tô decidindo :/</p>
           </Widget.Content>
         </Widget>
         
