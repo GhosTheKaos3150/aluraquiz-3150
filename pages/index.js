@@ -30,10 +30,10 @@ export default function Home() {
       <QuizContainer>
         <Widget>
           <Widget.Header>
-            <h1>Teste de ???</h1>
+            <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Ainda tô decidindo :/</p>
+            <p>{db.description}</p>
           </Widget.Content>
         </Widget>
         
