@@ -1,7 +1,7 @@
 {
-    "bg": "https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1",
-    "title": "Quiz CSS da Alura",
-    "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+    "bg": "https://c4.wallpaperflare.com/wallpaper/325/852/971/castlevania-castlevania-symphony-of-the-night-alucard-playstation-wallpaper-preview.jpg",
+    "title": "Quiz de Castlevania",
+    "description": "Teste seus conhecimentos sobre a Castlevania e sua história!",
     "questions": [
       {
         "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
@@ -31,9 +31,9 @@
     ],
     "theme": {
       "colors": {
-        "primary": "#0d47a1",
-        "secondary": "#29b6f6",
-        "mainBg": "#171B35",
+        "primary": "#2F323A",
+        "secondary": "#77567A",
+        "mainBg": "#C47AC0",
         "contrastText": "#FFFFFF",
         "wrong": "#FF5722",
         "success": "#4CAF50"
