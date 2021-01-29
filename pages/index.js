@@ -1,16 +1,14 @@
-import styled from 'styled-components'
-import db from "../db.json"
-import Widget from '../src/components/Widgets/index.js'
-import Footer from '../src/components/Footer/index'
-import GitHubCorner from '../src/components/GitHubCorner'
-import QuizBackground from '../src/components/QuizBackground'
+import styled from 'styled-components';
+import React from 'react';
+import { useRouter } from 'next/router';
 
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
+import db from '../db.json';
+import Widget from '../src/components/Widgets';
+import Footer from '../src/components/Footer/index';
+import GitHubCorner from '../src/components/GitHubCorner';
+import QuizBackground from '../src/components/QuizBackground';
 
-export const QuizContainer = styled.div `
+export const QuizContainer = styled.div`
 
   width: 100%;
   max-width: 350px;
@@ -21,12 +19,15 @@ export const QuizContainer = styled.div `
     padding: 15px;
   }
 
-`
+`;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = React.useState('');
   return (
 
-    <QuizBackground backgroundImage = {db.bg}>
+    // eslint-disable-next-line react/jsx-filename-extension
+    <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <Widget>
           <Widget.Header>
@@ -34,19 +35,39 @@ export default function Home() {
           </Widget.Header>
           <Widget.Content>
             <p>{db.description}</p>
+
+            <form onSubmit={function (event) {
+              event.preventDefault();
+
+              router.push(`/quiz?name=${name}`);
+            }}
+            >
+              <input
+                onChange={function (event) {
+                  setName(event.target.value);
+                }}
+                placeholder="Digite seu Nome :)"
+              />
+              <button
+                type="submit"
+                disabled={name.length === 0}
+              >
+                Jogar com &nbsp;
+                {name}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
-        
         <Widget>
           <Widget.Content>
             <h4>Vamos ver o trabalho dos coleguinhas?</h4>
-            <hr></hr>
+            <hr />
           </Widget.Content>
         </Widget>
-        <Footer/>
-        <GitHubCorner/>
+        <Footer />
+        <GitHubCorner />
       </QuizContainer>
     </QuizBackground>
 
-  )
+  );
 }
